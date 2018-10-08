@@ -6,7 +6,7 @@ export function addUser() {
       .get('form')
       .get('userform')
       .get('values')
-      .get('name');
+      .get('username');
     const useremail = getState()
       .get('form')
       .get('userform')

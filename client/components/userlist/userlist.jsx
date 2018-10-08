@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-
+import styled from 'styled-components';
 export default class UserList extends React.Component {
   deleteUser = id => {
     this.props.deleteUser(id);
@@ -9,8 +9,8 @@ export default class UserList extends React.Component {
     const listusers = users.map((item, index) => {
       return (
         <li key={index}>
-          <span>Имя:{item.username}</span>
-          <span>Email:{item.useremail}</span>
+          <Field>Имя:{item.username}</Field>
+          <Field>Email:{item.useremail}</Field>
           <button onClick={() => this.deleteUser(index)}>Удалить</button>
         </li>
       );
@@ -23,3 +23,7 @@ export default class UserList extends React.Component {
     );
   }
 }
+
+const Field = styled.span`
+  margin: 10px;
+`;

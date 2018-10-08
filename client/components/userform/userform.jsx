@@ -2,12 +2,12 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form/immutable';
 import validate from './validate';
 
-const renderField = ({ input, label, type, meta: { touched, error } }) => {
+const renderField = ({ input, label, type, placeholder, meta: { touched, error } }) => {
   return (
     <div>
       <label>{label}</label>
       <div>
-        <input {...input} type={type} placeholder={label} />
+        <input {...input} type={type} placeholder={placeholder} />
         {touched && error && <span>{error}</span>}
       </div>
     </div>
@@ -17,16 +17,16 @@ const UserForm = props => {
   return (
     <form>
       <div>
-        <label>Имя</label>
-        <div>
-          <Field name="username" type="text" placeholder="Введите имя пользователя" component={renderField} />
-        </div>
+        <Field name="username" type="text" placeholder="Введите имя пользователя" label="Имя" component={renderField} />
       </div>
       <div>
-        <label>Email</label>
-        <div>
-          <Field name="email" type="email" placeholder="Введите email пользователя" component={renderField} />
-        </div>
+        <Field
+          name="email"
+          type="email"
+          placeholder="Введите email пользователя"
+          label="Email"
+          component={renderField}
+        />
       </div>
       <button type="button" onClick={props.addUser}>
         Добавить пользователя

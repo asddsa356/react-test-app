@@ -5,26 +5,30 @@ export default class Header extends React.Component {
   render() {
     return (
       <Wrap>
-        <NavLink
-          to="/"
-          exact
-          activeStyle={{
-            fontWeight: 'bold',
-            color: 'red'
-          }}
-        >
-          Главная
-        </NavLink>
-        <NavLink
-          exact
-          to="/users"
-          activeStyle={{
-            fontWeight: 'bold',
-            color: 'red'
-          }}
-        >
-          Пользователи
-        </NavLink>
+        <Item>
+          <NavLink
+            to="/"
+            exact
+            activeStyle={{
+              fontWeight: 'bold',
+              color: 'red'
+            }}
+          >
+            Главная
+          </NavLink>
+        </Item>
+        <Item>
+          <NavLink
+            exact
+            to="/users"
+            activeStyle={{
+              fontWeight: 'bold',
+              color: 'red'
+            }}
+          >
+            Пользователи
+          </NavLink>
+        </Item>
       </Wrap>
     );
   }
@@ -33,4 +37,7 @@ export default class Header extends React.Component {
 const Wrap = styled.div`
   height: 10vh;
   width: 100%;
+`;
+const Item = styled.span`
+  margin: 10px;
 `;
