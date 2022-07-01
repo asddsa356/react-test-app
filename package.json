@@ -1,7 +1,7 @@
 {
   "name": "test",
   "version": "0.0.1",
-  "description": "",
+  "description": "This application was created as part of a test task to demonstrate skills in building applications using the React and Redux stack. Unfortunately, the description of the test task is lost.",
   "main": "index.js",
   "scripts": {
     "start": "node bin/index.js",
